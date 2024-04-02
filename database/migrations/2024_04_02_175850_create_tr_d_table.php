@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('tr_d', function (Blueprint $table) {
             $table->id();
-            $table->foreign('kode_trx')->references('kode_trx')->on('tr_h');
-            $table->string('kode_barang', 20);
+            $table->foreignId('kode_trx')->constrained('tr_h')->onDelete('cascade');
+            $table->string('kode_barang',20);
             $table->integer('jml_barang');
             $table->float('harga_barang');
             $table->timestamps();
+
         });
     }
 

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('m_barang', function (Blueprint $table) {
             $table->id();
-            $table->foreign('kode_barang')->references('kode_barang')->on('tr_d');
+            $table->foreignId('kode_barang')->constrained('tr_d')->onDelete('cascade');
             $table->string('nama', 200);
             $table->string('kategori', 20);
             $table->float('harga_barang');

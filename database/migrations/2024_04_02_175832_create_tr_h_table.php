@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('tr_h', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_trx', 20);
+            $table->string('kode_trx',20);
             $table->string('lokasi_trx',50);
-            $table->string('kode_sales', 10);
+            $table->string('kode_sales',10);
             $table->date('tgl_trx');
             $table->float('nominal_diskon');
             $table->timestamps();

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('m_sales', function (Blueprint $table) {
             $table->id();
-            $table->foreign('kode_sales')->references('kode_sales')->on('tr_h');
+            $table->foreignId('kode_sales')->constrained('tr_h')->onDelete('cascade');
             $table->string('nama', 200);
             $table->char('jns_kelamin',1);
             $table->date('tgl_bergabung');
