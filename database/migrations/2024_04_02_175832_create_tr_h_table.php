@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode_trx',20);
             $table->string('lokasi_trx',50);
-            $table->string('kode_sales',10);
+            $table->foreignId('kode_sales')->constrained('m_sales')->onDelete('cascade');
             $table->date('tgl_trx');
             $table->float('nominal_diskon');
             $table->timestamps();

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('tr_d', function (Blueprint $table) {
             $table->id();
             $table->foreignId('kode_trx')->constrained('tr_h')->onDelete('cascade');
-            $table->string('kode_barang',20);
+            $table->foreignId('kode_barang')->constrained('m_barang')->onDelete('cascade');
             $table->integer('jml_barang');
             $table->float('harga_barang');
             $table->timestamps();
